@@ -1,49 +1,36 @@
 class Plant:
-    def __init__(self, name, height, age):
+    def __init__ (self, name, age, height):
         self.name = name
-        self._age = age
-        self._height = height
+        self.age = age
+        self.height = height
 
-    def show(self):
-        print(
-            f"Plant created: {self.name}: {self._height:.1f}cm, {self._age} "
-            f"days old"
-        )
+    def printt(self):
+        print(f"Plant created: {self.name}: {self.height:.1f}cm, {self.age} days old\n")
 
-    def set_height(self, value):
+    def age_up(self, value):
         if value < 0:
-            print(f"{self.name}: Error, height can't be negative")
-            print("Height update rejected")
+            print(f"{self.name}: Error, age can't be negative\nAge update rejected")
         else:
-            self._height = value
-            print(f"Height updated: {self._height}cm")
-            return self._height
-
-    def set_age(self, value):
+            self.age = value
+            print(f"Age updated: {self.age} days")
+    
+    def height_up(self, value):
         if value < 0:
-            print(f"{self.name}:  Error, age can't be negative")
-            print("Age update rejected")
+            print(f"{self.name}: Error, height can't be negative\nHeight update rejected")
         else:
-            self._age = value
-            print(f"age update: {self._age} days")
-            return self._age
+            self.height = value
+            print(f"Height updated: {self.height}cm")
 
-    def total(self):
-        print(
-            f"Current state: {self.name}: {self._height:.1f}cm, {self._age} "
-            f"days old"
-        )
-
+def ft_garden_security():
+    plant1 = Plant("Rose", 10, 15.0)
+    print("=== Garden Security System ===")
+    plant1.printt()
+    plant1.height_up(25)
+    plant1.age_up(30)
+    print("\n")
+    plant1.height_up(-5)
+    plant1.age_up(-10)
+    print(f"\nCurrent state: {plant1.name}: {plant1.height:.1f}cm, {plant1.age} days old")
 
 if __name__ == "__main__":
-    plant1 = Plant("Rose", 15.0, 10)
-    print("=== Garden Security System ===")
-    plant1.show()
-    print("\n")
-    plant1.set_height(25)
-    plant1.set_age(30)
-    print("\n")
-    plant1.set_height(-25)
-    plant1.set_age(-30)
-    print("\n")
-    plant1.total()
+    ft_garden_security()
