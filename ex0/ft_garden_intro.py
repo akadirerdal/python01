@@ -8,5 +8,6 @@ def ft_garden_intro():
     print(f"Age: {age} years\n")
     print("=== End of Programs ===")
 
+
 if __name__ == "__main__":
     ft_garden_intro()
